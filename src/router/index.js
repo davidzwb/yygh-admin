@@ -73,23 +73,18 @@ export const constantRouterMap = [
   },
 
   {
-    path: '/example',
+    path: '/cmn',
     component: Layout,
-    redirect: '/example/table',
-    name: 'Example',
-    meta: { title: 'Example', icon: 'example' },
+    redirect: '/cmn/list',
+    name: '数据管理',
+    alwaysShow: true,
+    meta: { title: '数据管理', icon: 'example' },
     children: [
       {
-        path: 'table',
-        name: 'Table',
-        component: () => import('@/views/table/index'),
-        meta: { title: 'Table', icon: 'table' }
-      },
-      {
-        path: 'tree',
-        name: 'Tree',
-        component: () => import('@/views/tree/index'),
-        meta: { title: 'Tree', icon: 'tree' }
+        path: 'list',
+        name: '数据字典',
+        component: () => import('@/views/dict/list'),
+        meta: { title: '数据字典', icon: 'table' }
       }
     ]
   },

@@ -26,5 +26,11 @@ export default {
       url: `/admin/hosp/hospital/updateStatus/${id}/${status}`,
       method: 'get'
     })
+  },
+  getHospById(id) {
+    return request({
+      url: `/admin/hosp/hospital/show/${id}`,
+      method: 'get'
+    })
   }
 }

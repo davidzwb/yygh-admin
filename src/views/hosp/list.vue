@@ -94,6 +94,9 @@
             @click="updateStatus(scope.row.id, 1)"
           >上线</el-button
           >
+          <router-link :to="'/hospSet/hospital/show/' + scope.row.id">
+            <el-button type="primary" size="mini">查看</el-button>
+          </router-link>
         </template>
       </el-table-column>
     </el-table>

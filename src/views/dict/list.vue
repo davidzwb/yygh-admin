@@ -18,7 +18,7 @@
       :data="list"
       :load="getChildren"
       :tree-props="{ children: 'children', hasChildren: 'hasChildren' }"
-      style="width: 100%"
+      style="width: 100%"
       row-key="id"
       border
       lazy

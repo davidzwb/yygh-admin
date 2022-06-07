@@ -78,6 +78,24 @@
       <el-table-column prop="createTime" label="创建时间" />
 
       <el-table-column label="操作" width="230" align="center" />
+      <el-table-column label="操作" width="230" align="center">
+        <template slot-scope="scope">
+          <el-button
+            v-if="scope.row.status == 1"
+            type="primary"
+            size="mini"
+            @click="updateStatus(scope.row.id, 0)"
+          >下线</el-button
+          >
+          <el-button
+            v-if="scope.row.status == 0"
+            type="danger"
+            size="mini"
+            @click="updateStatus(scope.row.id, 1)"
+          >上线</el-button
+          >
+        </template>
+      </el-table-column>
     </el-table>
 
     <!-- 分页组件 -->
@@ -157,6 +175,11 @@ export default {
     },
     cityChanged() {
       this.$forceUpdate()
+    },
+    updateStatus(id, status) {
+      hospitalApi.updateStatus(id, status).then(response => {
+        this.fetchData(this.page)
+      })
     }
   }
 }

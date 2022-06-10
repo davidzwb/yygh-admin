@@ -32,5 +32,23 @@ export default {
       url: `/admin/hosp/hospital/show/${id}`,
       method: 'get'
     })
+  },
+  getDeptByHoscode(hoscode) {
+    return request({
+      url: `/admin/hosp/department/getDeptList/${hoscode}`,
+      method: 'get'
+    })
+  },
+  getScheduleRule(page, limit, hoscode, depcode) {
+    return request({
+      url: `/admin/hosp/schedule/getScheduleRule/${page}/${limit}/${hoscode}/${depcode}`,
+      method: 'get'
+    })
+  },
+  getScheduleDetail(hoscode, depcode, workDate) {
+    return request({
+      url: `/admin/hosp/schedule/getScheduleDetail/${hoscode}/${depcode}/${workDate}`,
+      method: 'get'
+    })
   }
 }
